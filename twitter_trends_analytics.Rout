@@ -1,0 +1,186 @@
+
+R version 4.2.1 (2022-06-23) -- "Funny-Looking Kid"
+Copyright (C) 2022 The R Foundation for Statistical Computing
+Platform: x86_64-pc-linux-gnu (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> install.packages('rjson')
+Installing package into ‘/home/kaliappan/R/x86_64-pc-linux-gnu-library/4.2’
+(as ‘lib’ is unspecified)
+trying URL 'https://cloud.r-project.org/src/contrib/rjson_0.2.21.tar.gz'
+Content type 'application/x-gzip' length 116509 bytes (113 KB)
+==================================================
+downloaded 113 KB
+
+* installing *source* package ‘rjson’ ...
+** package ‘rjson’ successfully unpacked and MD5 sums checked
+** using staged installation
+** libs
+g++ -std=gnu++14 -I"/usr/share/R/include" -DNDEBUG      -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-zYgbYq/r-base-4.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c dump.cpp -o dump.o
+gcc -I"/usr/share/R/include" -DNDEBUG      -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-zYgbYq/r-base-4.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c parser.c -o parser.o
+gcc -I"/usr/share/R/include" -DNDEBUG      -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-zYgbYq/r-base-4.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c register.c -o register.o
+g++ -std=gnu++14 -shared -L/usr/lib/R/lib -Wl,-Bsymbolic-functions -Wl,-z,relro -o rjson.so dump.o parser.o register.o -L/usr/lib/R/lib -lR
+installing to /home/kaliappan/R/x86_64-pc-linux-gnu-library/4.2/00LOCK-rjson/00new/rjson/libs
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** checking absolute paths in shared objects and dynamic libraries
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (rjson)
+
+The downloaded source packages are in
+	‘/tmp/RtmpPd0wty/downloaded_packages’
+> library(rjson
++ )
+> data <- fromJSON(file="/home/kaliappan/Documents/work/college/NLP/MP/Twitter API v2.postman_collection.json")
+> 
+> install.packages("stringr")
+Installing package into ‘/home/kaliappan/R/x86_64-pc-linux-gnu-library/4.2’
+(as ‘lib’ is unspecified)
+trying URL 'https://cloud.r-project.org/src/contrib/stringr_1.4.1.tar.gz'
+Content type 'application/x-gzip' length 136607 bytes (133 KB)
+==================================================
+downloaded 133 KB
+
+* installing *source* package ‘stringr’ ...
+** package ‘stringr’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** data
+*** moving datasets to lazyload DB
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+*** copying figures
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (stringr)
+
+The downloaded source packages are in
+	‘/tmp/RtmpPd0wty/downloaded_packages’
+> library(stringr)
+> 
+> hashtags <- str_extract_all(data,"#[a-zA-Z0-9]*")
+Warning message:
+In stri_extract_all_regex(string, pattern, simplify = simplify,  :
+  argument is not an atomic vector; coercing
+> 
+> hashtags <- hashtags[[2]]
+> 
+> d <- table(hashtags)
+> 
+> top5hashtags <- d[table(d)>4]
+> 
+> df <- as.data.frame(d)
+> 
+> install.packages("data.table")
+Installing package into ‘/home/kaliappan/R/x86_64-pc-linux-gnu-library/4.2’
+(as ‘lib’ is unspecified)
+trying URL 'https://cloud.r-project.org/src/contrib/data.table_1.14.2.tar.gz'
+Content type 'application/x-gzip' length 5301817 bytes (5.1 MB)
+==================================================
+downloaded 5.1 MB
+
+* installing *source* package ‘data.table’ ...
+** package ‘data.table’ successfully unpacked and MD5 sums checked
+** using staged installation
+gcc 9.4.0
+zlib 1.2.11 is available ok
+R CMD SHLIB supports OpenMP without any extra hint
+** libs
+gcc -I"/usr/share/R/include" -DNDEBUG     -fopenmp  -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-zYgbYq/r-base-4.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c assign.c -o assign.o
+gcc -I"/usr/share/R/include" -DNDEBUG     -fopenmp  -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-zYgbYq/r-base-4.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c between.c -o between.o
+gcc -I"/usr/share/R/include" -DNDEBUG     -fopenmp  -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-zYgbYq/r-base-4.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c bmerge.c -o bmerge.o
+gcc -I"/usr/share/R/include" -DNDEBUG     -fopenmp  -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-zYgbYq/r-base-4.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c chmatch.c -o chmatch.o
+gcc -I"/usr/share/R/include" -DNDEBUG     -fopenmp  -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-zYgbYq/r-base-4.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c cj.c -o cj.o
+gcc -I"/usr/share/R/include" -DNDEBUG     -fopenmp  -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-zYgbYq/r-base-4.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c coalesce.c -o coalesce.o
+gcc -I"/usr/share/R/include" -DNDEBUG     -fopenmp  -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-zYgbYq/r-base-4.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c dogroups.c -o dogroups.o
+gcc -I"/usr/share/R/include" -DNDEBUG     -fopenmp  -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-zYgbYq/r-base-4.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c fastmean.c -o fastmean.o
+gcc -I"/usr/share/R/include" -DNDEBUG     -fopenmp  -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-zYgbYq/r-base-4.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c fcast.c -o fcast.o
+gcc -I"/usr/share/R/include" -DNDEBUG     -fopenmp  -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-zYgbYq/r-base-4.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c fifelse.c -o fifelse.o
+gcc -I"/usr/share/R/include" -DNDEBUG     -fopenmp  -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-zYgbYq/r-base-4.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c fmelt.c -o fmelt.o
+gcc -I"/usr/share/R/include" -DNDEBUG     -fopenmp  -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-zYgbYq/r-base-4.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c forder.c -o forder.o
+gcc -I"/usr/share/R/include" -DNDEBUG     -fopenmp  -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-zYgbYq/r-base-4.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c frank.c -o frank.o
+gcc -I"/usr/share/R/include" -DNDEBUG     -fopenmp  -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-zYgbYq/r-base-4.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c fread.c -o fread.o
+gcc -I"/usr/share/R/include" -DNDEBUG     -fopenmp  -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-zYgbYq/r-base-4.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c freadR.c -o freadR.o
+gcc -I"/usr/share/R/include" -DNDEBUG     -fopenmp  -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-zYgbYq/r-base-4.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c froll.c -o froll.o
+gcc -I"/usr/share/R/include" -DNDEBUG     -fopenmp  -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-zYgbYq/r-base-4.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c frollR.c -o frollR.o
+gcc -I"/usr/share/R/include" -DNDEBUG     -fopenmp  -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-zYgbYq/r-base-4.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c frolladaptive.c -o frolladaptive.o
+gcc -I"/usr/share/R/include" -DNDEBUG     -fopenmp  -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-zYgbYq/r-base-4.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c fsort.c -o fsort.o
+gcc -I"/usr/share/R/include" -DNDEBUG     -fopenmp  -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-zYgbYq/r-base-4.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c fwrite.c -o fwrite.o
+gcc -I"/usr/share/R/include" -DNDEBUG     -fopenmp  -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-zYgbYq/r-base-4.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c fwriteR.c -o fwriteR.o
+gcc -I"/usr/share/R/include" -DNDEBUG     -fopenmp  -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-zYgbYq/r-base-4.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c gsumm.c -o gsumm.o
+gcc -I"/usr/share/R/include" -DNDEBUG     -fopenmp  -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-zYgbYq/r-base-4.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c ijoin.c -o ijoin.o
+gcc -I"/usr/share/R/include" -DNDEBUG     -fopenmp  -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-zYgbYq/r-base-4.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c init.c -o init.o
+gcc -I"/usr/share/R/include" -DNDEBUG     -fopenmp  -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-zYgbYq/r-base-4.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c inrange.c -o inrange.o
+gcc -I"/usr/share/R/include" -DNDEBUG     -fopenmp  -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-zYgbYq/r-base-4.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c nafill.c -o nafill.o
+gcc -I"/usr/share/R/include" -DNDEBUG     -fopenmp  -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-zYgbYq/r-base-4.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c nqrecreateindices.c -o nqrecreateindices.o
+gcc -I"/usr/share/R/include" -DNDEBUG     -fopenmp  -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-zYgbYq/r-base-4.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c openmp-utils.c -o openmp-utils.o
+gcc -I"/usr/share/R/include" -DNDEBUG     -fopenmp  -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-zYgbYq/r-base-4.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c quickselect.c -o quickselect.o
+gcc -I"/usr/share/R/include" -DNDEBUG     -fopenmp  -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-zYgbYq/r-base-4.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c rbindlist.c -o rbindlist.o
+gcc -I"/usr/share/R/include" -DNDEBUG     -fopenmp  -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-zYgbYq/r-base-4.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c reorder.c -o reorder.o
+gcc -I"/usr/share/R/include" -DNDEBUG     -fopenmp  -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-zYgbYq/r-base-4.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c shift.c -o shift.o
+gcc -I"/usr/share/R/include" -DNDEBUG     -fopenmp  -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-zYgbYq/r-base-4.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c snprintf.c -o snprintf.o
+gcc -I"/usr/share/R/include" -DNDEBUG     -fopenmp  -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-zYgbYq/r-base-4.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c subset.c -o subset.o
+gcc -I"/usr/share/R/include" -DNDEBUG     -fopenmp  -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-zYgbYq/r-base-4.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c transpose.c -o transpose.o
+gcc -I"/usr/share/R/include" -DNDEBUG     -fopenmp  -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-zYgbYq/r-base-4.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c types.c -o types.o
+gcc -I"/usr/share/R/include" -DNDEBUG     -fopenmp  -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-zYgbYq/r-base-4.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c uniqlist.c -o uniqlist.o
+gcc -I"/usr/share/R/include" -DNDEBUG     -fopenmp  -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-zYgbYq/r-base-4.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c utils.c -o utils.o
+gcc -I"/usr/share/R/include" -DNDEBUG     -fopenmp  -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-zYgbYq/r-base-4.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c vecseq.c -o vecseq.o
+gcc -I"/usr/share/R/include" -DNDEBUG     -fopenmp  -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-zYgbYq/r-base-4.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c wrappers.c -o wrappers.o
+gcc -shared -L/usr/lib/R/lib -Wl,-Bsymbolic-functions -Wl,-z,relro -o data.table.so assign.o between.o bmerge.o chmatch.o cj.o coalesce.o dogroups.o fastmean.o fcast.o fifelse.o fmelt.o forder.o frank.o fread.o freadR.o froll.o frollR.o frolladaptive.o fsort.o fwrite.o fwriteR.o gsumm.o ijoin.o init.o inrange.o nafill.o nqrecreateindices.o openmp-utils.o quickselect.o rbindlist.o reorder.o shift.o snprintf.o subset.o transpose.o types.o uniqlist.o utils.o vecseq.o wrappers.o -fopenmp -lz -L/usr/lib/R/lib -lR
+PKG_CFLAGS = -fopenmp
+PKG_LIBS = -fopenmp -lz
+if [ "data.table.so" != "datatable.so" ]; then mv data.table.so datatable.so; fi
+if [ "" != "Windows_NT" ] && [ `uname -s` = 'Darwin' ]; then install_name_tool -id datatable.so datatable.so; fi
+installing to /home/kaliappan/R/x86_64-pc-linux-gnu-library/4.2/00LOCK-data.table/00new/data.table/libs
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** checking absolute paths in shared objects and dynamic libraries
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (data.table)
+
+The downloaded source packages are in
+	‘/tmp/RtmpPd0wty/downloaded_packages’
+> library("data.table")
+> 
+> setorder(df,-Freq)
+> 
+> top5hashtags <- head(df,5)
+> 
+> barplot(top5hashtags$Freq, names.arg=top5hashtags$hashtags)
+> 
+> savehistory(file="~/Documents/work/college/BDA/twitter_trends_analytics.R")
+Error in .External2(C_savehistory, file) : no history available to save
+Calls: savehistory
+Execution halted
